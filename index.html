@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人網站 | Portfolio</title>
+    <meta name="description" content="歡迎來到我的個人作品集網站，這裡展示了我的專案與技能。">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Taylor.Invest</div>
+        <ul class="nav-links">
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#about">關於我</a></li>
+            <li><a href="#services">專業服務</a></li>
+            <li><a href="#contact">聯絡諮詢</a></li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切換主題">
+            <!-- Icon retained, visual handled by CSS -->
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+        </button>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">你好，我是 <span class="highlight">Taylor Yam</span></h1>
+            <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem; color: #2e2621;">任益農</h2>
+            <p class="hero-subtitle">玉山證券 <span class="text-gradient">複委託專員</span> | 全球投資佈局專家</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn primary">服務項目</a>
+                <a href="#contact" class="btn secondary">預約諮詢</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="profile-container">
+                <img src="images/profile.jpg" alt="Taylor Yam 任益農 - 個人照片" class="profile-image">
+                <div class="profile-glow"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">關於我</h2>
+            <div class="about-content">
+                <p class="section-desc">
+                    嗨，我是 Taylor。畢業於<strong>清華大學經濟系</strong>，我將嚴謹的經濟學理論與實戰交易經驗結合，為投資人帶來獨特的市場洞察。
+                </p>
+                <p class="section-desc" style="margin-top: -2rem;">
+                    我有別於一般的理財專員，擁有 <strong>6 年衍生性商品高頻交易經驗</strong>（港股權證、牛熊證）與 <strong>3 年程式交易開發經驗</strong>（指數期貨
+                    CTA）。這些背景讓我能以<strong>「量化數據」</strong>為基礎，並透過<strong>「大戶思維」</strong>來解讀市場籌碼流向，協助您在波動中看清趨勢，做出更理性的投資決策。
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>6年+</h3>
+                    <p>衍生商品實戰<br><span style="font-size:0.8rem; color:#8a7a70;">港股權證 / 牛熊證</span></p>
+                </div>
+                <div class="stat-card">
+                    <h3>量化</h3>
+                    <p>程式交易思維<br><span style="font-size:0.8rem; color:#8a7a70;">期貨 CTA 策略開發</span></p>
+                </div>
+                <div class="stat-card">
+                    <h3>清大</h3>
+                    <p>經濟系畢業<br><span style="font-size:0.8rem; color:#8a7a70;">總經趨勢分析</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 獨家策略區塊 -->
+    <section id="strategy" class="section strategy-bg">
+        <div class="container">
+            <div class="strategy-container">
+                <div class="strategy-content">
+                    <span class="badge">量化思維分享</span>
+                    <h2 class="strategy-title">美股全天候量化投資邏輯</h2>
+                    <p class="strategy-desc">
+                        不再被動承受市場波動。本策略架構採用<strong>「牛熊分流機制」</strong>，以 <strong>S&P 500 與 200
+                            日均線</strong>之相對位置作為判斷基準，靈活調整資產配置。
+                        <br><br>
+                        🐂 <strong>多頭循環：</strong>順勢而為，篩選動能強勢標的。<br>
+                        🐻 <strong>空頭循環：</strong>嚴守紀律，執行分批佈局策略。
+                    </p>
+                    <ul class="strategy-features">
+                        <li>✅ <strong>長期穩健：</strong>透過量化模型驗證，追求優於傳統指數的風險報酬比</li>
+                        <li>✅ <strong>絕對紀律：</strong>明確的進出場依據，排除人性貪婪與恐懼</li>
+                        <li>✅ <strong>邏輯驗證：</strong>基於歷史數據回測，提供客觀的投資參考架構</li>
+                    </ul>
+                    <p style="font-size: 0.8rem; color: #8a7a70; margin-top: 1rem; line-height: 1.4;">
+                        *警語：本策略僅為程式交易邏輯分享與學術研究，不代表對未來獲利之保證。投資人應獨立判斷，審慎評估並自負投資風險。過往績效不代表未來表現。
+                    </p>
+                    <a href="#contact" class="btn primary"
+                        onclick="document.querySelector('.contact-box h2').innerText='請留下您的 Email，我將寄送策略邏輯簡報給您';"
+                        style="margin-top: 1.5rem;">
+                        🔒 索取策略邏輯簡報 (交流分享)
+                    </a>
+                </div>
+                <div class="strategy-visual">
+                    <div class="chart-circle">
+                        <div class="chart-inner">
+                            <span>Quant<br>Logic</span>
+                        </div>
+                    </div>
+                    <!-- Labels removed for cleaner look -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 獨家策略區塊 2 (不動產活化) -->
+    <section id="strategy-2" class="section strategy-bg-alt">
+        <div class="container">
+            <div class="strategy-container reverse-layout"> <!-- Reverse layout for visual variety -->
+                <div class="strategy-visual">
+                    <!-- Visual conceptualizing House + Bonds -->
+                    <div class="asset-balance">
+                        <div class="balance-item house">
+                            <span class="icon">🏠</span>
+                            <span class="label">不動產增貸<br><span
+                                    style="font-size: 0.9rem; opacity: 0.8;">低利資金成本</span></span>
+                        </div>
+                        <div class="balance-arrow">➡ 套利 ➡</div>
+                        <div class="balance-item bond">
+                            <span class="icon">📜</span>
+                            <span class="label">美國企業債<br><span
+                                    style="font-size: 0.9rem; opacity: 0.8;">高息優質標的</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="strategy-content">
+                    <span class="badge" style="background: #4a5d85;">穩健現金流</span>
+                    <h2 class="strategy-title" style="color: #e8e6e1;">不動產資產活化計畫</h2>
+                    <p class="strategy-desc" style="color: #b0b0b0;">
+                        您的房子不只是居住空間，更是隱形的資金庫。此計畫協助您運用<strong>房產增貸</strong>取得低成本資金，轉投資於<strong>世界級美國企業債券</strong>（如
+                        Oracle, Pfizer）。
+                        <br><br>
+                        透過<strong>「利差擴大」</strong>與<strong>「以債養房」</strong>的自償性循環，在保有房產增值潛力的同時，創造額外的被動現金流。
+                    </p>
+                    <ul class="strategy-features" style="color: #e8e6e1;">
+                        <li>✅ <strong>雙重效益：</strong>同時享有房產增值與海外債券配息</li>
+                        <li>✅ <strong>優質標的：</strong>嚴選信評 BBB~A 級知名企業，降低違約風險</li>
+                        <li>✅ <strong>無痛套利：</strong>詳細規劃現金流時程，打造自償性還款計畫</li>
+                    </ul>
+                    <p style="font-size: 0.8rem; color: #888; margin-top: 1rem; line-height: 1.4;">
+                        *注意：本計畫涉及槓桿操作與匯率風險。投資前需謹慎評估自身還款能力、利率變動風險及匯率波動對資產淨值之影響。
+                    </p>
+                    <a href="#contact" class="btn primary"
+                        onclick="document.querySelector('.contact-box h2').innerText='請留下您的 Email，我將寄送資產活化現金流試算表給您';"
+                        style="margin-top: 1.5rem; background: linear-gradient(135deg, #4a5d85, #2d3b55); box-shadow: 0 4px 15px rgba(45, 59, 85, 0.4);">
+                        📊 索取資產活化試算表 (免費諮詢)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">專業服務</h2>
+            <div class="portfolio-grid">
+                <!-- 服務項目 1 -->
+                <div class="project-card">
+                    <div class="card-image placeholder-gradient-1">
+                        <!-- 可以放美股/圖表 icon -->
+                    </div>
+                    <div class="card-content">
+                        <h3>美股複委託投資</h3>
+                        <p>提供美股、ETF 即時交易服務，協助您掌握世界級企業成長紅利。</p>
+                        <a href="#contact" class="card-link">諮詢詳情 &rarr;</a>
+                    </div>
+                </div>
+                <!-- 服務項目 2 -->
+                <div class="project-card">
+                    <div class="card-image placeholder-gradient-2"></div>
+                    <div class="card-content">
+                        <h3>定期定額規劃</h3>
+                        <p>小資也能佈局全球，透過紀律投資累積長期財富，專屬配置建議。</p>
+                        <a href="#contact" class="card-link">開始規劃 &rarr;</a>
+                    </div>
+                </div>
+                <!-- 服務項目 3 -->
+                <div class="project-card">
+                    <div class="card-image placeholder-gradient-3"></div>
+                    <div class="card-content">
+                        <h3>海外債券配置</h3>
+                        <p>為您挑選優質海外債券，打造穩定現金流，平衡投資組合風險。</p>
+                        <a href="#contact" class="card-link">了解更多 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-box">
+                <h2>準備好開始您的全球投資之旅了嗎？</h2>
+                <p>我是 Taylor Yam 任益農，您的專屬玉山證券複委託專員。</p>
+                <a href="mailto:contact@esunsec.example.com" class="btn primary big">立即聯絡</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Taylor Yam. 玉山證券. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
