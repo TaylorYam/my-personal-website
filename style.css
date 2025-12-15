@@ -236,6 +236,31 @@ h3 {
     font-size: 1.1rem;
 }
 
+/* Enhanced About Section Typography */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+}
+
+.about-intro {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.about-details {
+    font-size: 1.15rem;
+    color: #5a504a;
+    /* Slightly warmer than standard grey */
+    line-height: 1.8;
+    max-width: 720px;
+    margin: 0 auto;
+    /* Optional: text-align: justify; if preferred, but center is cleaner for short bios */
+}
+
 /* Stats */
 .stats-grid {
     display: grid;
