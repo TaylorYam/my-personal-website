@@ -545,6 +545,73 @@ h3 {
     animation: float 6s infinite ease-in-out;
 }
 
+/* Strategy Section Alt (Dark Theme) */
+.strategy-bg-alt {
+    background: #1a1e26;
+    /* Dark Blue-Grey Theme for Asset Activation */
+    position: relative;
+    color: #e8e6e1;
+}
+
+.strategy-container.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+/* Asset Balance Visual */
+.asset-balance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.balance-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 160px;
+    transition: transform 0.3s;
+}
+
+.balance-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.balance-item .icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.balance-item .label {
+    font-weight: 700;
+    line-height: 1.4;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.balance-arrow {
+    font-weight: 800;
+    color: #4a5d85;
+    font-size: 1.2rem;
+    text-align: center;
+    background: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    min-width: 120px;
+}
+
+.btn.big {
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+}
+
 /* Responsive Optimizations */
 @media (max-width: 900px) {
     .strategy-container {
