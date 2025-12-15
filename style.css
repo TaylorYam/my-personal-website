@@ -654,6 +654,28 @@ h3 {
         flex-direction: column-reverse;
     }
 
+    .strategy-visual {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .chart-circle {
+        width: 260px;
+        height: 260px;
+    }
+
+    .strategy-title {
+        font-size: 2rem;
+    }
+
+    .strategy-desc,
+    .strategy-features li {
+        text-align: left;
+    }
+
     /* Asset Balance Mobile */
     .asset-balance {
         flex-direction: column;
