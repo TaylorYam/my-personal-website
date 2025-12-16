@@ -103,6 +103,12 @@ h3 {
     display: inline-block;
 }
 
+.text-highlight {
+    color: #d17b5a;
+    /* Terracotta / Red Highlight */
+    font-weight: 700;
+}
+
 .hero-title {
     color: #3e2723;
     /* Deep Espresso / Dark Coffee for high contrast */
