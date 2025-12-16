@@ -701,6 +701,29 @@ h3 {
     /* Significantly increased padding */
 }
 
+/* Value Props Typography Update */
+.value-card h3 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #a89f91;
+    /* Muted Taupe for English eyebrow */
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.highlight-title {
+    display: block;
+    font-size: 1.8rem;
+    /* Larger for Chinese main title */
+    color: #f4f1ea;
+    /* Light Cream */
+    margin-top: 0.5rem;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
 /* Modal Styles */
 .modal-overlay {
     position: fixed;
