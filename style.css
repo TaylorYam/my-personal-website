@@ -384,10 +384,25 @@ h3 {
 }
 
 /* Enhanced About Section Typography */
+/* About Section Layout - Left Text, Right Image */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
 .about-content {
-    max-width: 800px;
-    margin: 0 auto 4rem auto;
-    text-align: center;
+    flex: 1;
+    text-align: left;
+    /* Left align text */
+}
+
+.about-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .about-intro {
@@ -401,11 +416,17 @@ h3 {
 .about-details {
     font-size: 1.15rem;
     color: #5a504a;
-    /* Slightly warmer than standard grey */
     line-height: 1.8;
-    max-width: 720px;
-    margin: 0 auto;
-    /* Optional: text-align: justify; if preferred, but center is cleaner for short bios */
+    margin-bottom: 1rem;
+}
+
+/* Responsive Handling */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column-reverse;
+        /* Image Top, Text Bottom */
+        gap: 2rem;
+    }
 }
 
 /* Stats */
