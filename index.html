@@ -356,18 +356,41 @@
                 </div>
 
                 <div class="strategy-visual">
-                    <!-- Removed Chart as requested per previous step, but user logic implies keeping structure. 
-                         Wait, user previously asked to REMOVE chart for Real Estate but KEEP for Quant. 
-                         However, now user asks to move button "below chart".
-                         Since Real Estate has no chart, let's just put it in the Visual div (which is empty or present).
-                         Checking file... Real Estate Visual div was removed in Step 1072? 
-                         Ah, wait. Let's check if .strategy-visual exists in Real Estate. -->
-                    <!-- In Step 1072, I removed the content inside .strategy-visual AND the div itself? 
-                         No, I removed the div entirely. 
-                         So I need to re-create the div for layout consistency if I want the button on the right?
-                         User said "Align Quant with Real Estate" (text left, title center) BUT now "Try putting button below right chart".
-                         Maybe only for Quant? But usually symmetry is good. 
-                         Let's re-introduce .strategy-visual for Real Estate just to hold the button on the layout side. -->
+                    <!-- Asset Balance Visual (Restored) -->
+                    <div class="asset-balance">
+                        <!-- Left: Property -->
+                        <div class="balance-item">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    style="width: 1em; height: 1em;">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                            </span>
+                            <div class="label">不動產增貸<br><span
+                                    style="font-size:0.9em; opacity:0.8; font-weight:400;">低利資金成本</span></div>
+                        </div>
+
+                        <!-- Middle: Arbitrage -->
+                        <div class="balance-arrow">套利</div>
+
+                        <!-- Right: Bond -->
+                        <div class="balance-item">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    style="width: 1em; height: 1em;">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <line x1="10" y1="9" x2="8" y2="9"></line>
+                                </svg>
+                            </span>
+                            <div class="label">美國企業債<br><span
+                                    style="font-size:0.9em; opacity:0.8; font-weight:400;">高息優質標的</span></div>
+                        </div>
+                    </div>
+
                     <a href="javascript:void(0)" class="btn primary" onclick="openModal('private')"
                         style="background: linear-gradient(135deg, #4a5d85, #2d3b55); box-shadow: 0 4px 15px rgba(45, 59, 85, 0.4);">
                         <svg class="icon-inline" style="stroke: white;" viewBox="0 0 24 24" stroke-linecap="round"
