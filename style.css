@@ -1547,3 +1547,35 @@ footer {
     background: rgba(255, 255, 255, 0.9);
     color: #000;
 }
+
+/* Mobile Landscape Optimization for Fullpage Modal */
+@media screen and (max-width: 768px) {
+    .modal-content.fullpage {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100vh !important;
+        height: 100vw !important;
+        transform: translate(-50%, -50%) rotate(90deg);
+        margin: 0 !important;
+        border-radius: 0;
+        max-width: none !important;
+        max-height: none !important;
+        overflow: hidden;
+    }
+
+    .modal-content.fullpage img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        max-height: none !important;
+    }
+
+    /* Adjust Navigation Buttons for Rotated View */
+    /* Optional: making them larger for easier touch */
+    .modal-content.fullpage .nav-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+}
