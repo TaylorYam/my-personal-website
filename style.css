@@ -1168,7 +1168,7 @@ footer {
         justify-content: flex-start;
         align-items: center;
         text-align: center;
-        padding: 100px 1.5rem 2rem 1.5rem;
+        padding: 150px 1.5rem 2rem 1.5rem;
         /* More top padding for stacked navbar */
         min-height: auto;
         /* Remove fixed height constraint */
