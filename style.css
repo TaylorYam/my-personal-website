@@ -1540,3 +1540,9 @@ footer {
     background: rgba(255, 255, 255, 0.9);
     color: #000;
 }
+
+/* Override Close Button Position to Right */
+.modal-content.fullpage .close-btn {
+    left: auto;
+    right: 20px;
+}
