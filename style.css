@@ -625,6 +625,18 @@ h3 {
     /* Ensure list items are readable */
 }
 
+.icon-inline {
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: -0.2em;
+    /* Align with text baseline */
+    stroke-width: 2;
+    fill: none;
+    stroke: var(--secondary-color);
+    /* Bronze/Gold */
+    margin-right: 0.4rem;
+}
+
 /* Strategy Visual (Simple CSS Chart) */
 .strategy-visual {
     flex: 1;
