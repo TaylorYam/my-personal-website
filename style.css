@@ -556,8 +556,10 @@ h3 {
 /* Contact */
 .contact-box {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
-    padding: 4rem;
-    border-radius: 30px;
+    padding: 2rem;
+    /* Reduced padding */
+    border-radius: 4px;
+    /* Less rounded corners (almost square) */
     text-align: center;
     border: 1px solid var(--glass-border);
 }
