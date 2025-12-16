@@ -760,7 +760,9 @@ h3 {
     /* Larger for Chinese main title */
     color: #f4f1ea;
     /* Light Cream */
-    margin-top: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    /* Adjusted for Top position */
     font-weight: 800;
     letter-spacing: 0;
 }
