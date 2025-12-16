@@ -1360,17 +1360,17 @@ footer {
 }
 
 .highlight-card {
-    background: rgba(62, 39, 35, 0.05);
-    /* Light Coffee bg */
-    border: 1px solid rgba(62, 39, 35, 0.2);
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
+    background: #fff;
+    /* White bg */
+    border: none;
+    padding: 1.5rem 2.5rem;
+    border-radius: 16px;
     text-align: center;
-    min-width: 220px;
+    min-width: 240px;
     opacity: 0;
     transform: translateY(20px);
     animation: slideUpFade 0.6s ease-out forwards;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .highlight-card:nth-child(2) {
@@ -1379,7 +1379,7 @@ footer {
 }
 
 .highlight-card .label {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #666;
     margin-bottom: 0.5rem;
     display: block;
@@ -1387,11 +1387,12 @@ footer {
 }
 
 .highlight-card .value {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 800;
-    color: #bd2a2a;
-    /* Red for positive return */
-    line-height: 1.2;
+    color: #cc3333;
+    /* Brighter Red */
+    line-height: 1.1;
+    margin: 0.5rem 0;
 }
 
 .highlight-card .sub-value {

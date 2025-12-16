@@ -441,13 +441,13 @@
             <div class="strategy-highlights">
                 <div class="highlight-card">
                     <span class="label">總投資報酬率</span>
-                    <div class="value">323.77%</div>
+                    <div class="value">367.68%</div>
                     <div class="sub-value">(vs SPY 110.35%)</div>
                 </div>
                 <div class="highlight-card">
                     <span class="label">年化報酬率 (CAGR)</span>
-                    <div class="value">27.71%</div>
-                    <div class="sub-value">(vs SPY 13.42%)</div>
+                    <div class="value">29.64%</div>
+                    <div class="sub-value">(vs SPY 13.33%)</div>
                 </div>
             </div>
 
@@ -465,12 +465,14 @@
 
             var modalContent = modal.querySelector('.modal-content');
             var title = modal.querySelector('h3');
-            var desc = modal.querySelector('p'); // The first paragraph
+            var desc = modal.querySelector('p'); // The first paragraph (description)
             var img = modal.querySelector('img');
 
             // Reset state
             modalContent.classList.remove('fullpage');
             img.style.maxWidth = '';
+            title.style.display = 'block';
+            desc.style.display = 'block';
 
             if (type === 'official') {
                 title.innerText = '掃描加入官方帳號';
@@ -479,8 +481,10 @@
                 img.alt = 'Line Official Account QR Code';
                 img.style.maxWidth = '250px';
             } else if (type === 'strategy-info') {
-                title.innerText = '美股量化動能配置';
-                desc.innerHTML = '策略歷史回測數據參考';
+                // Hide Text Elements for clean chart view
+                title.style.display = 'none';
+                desc.style.display = 'none';
+
                 img.src = 'images/backtest.png';
                 img.alt = 'Strategy Backtest Chart';
                 // Add fullpage class for large chart
