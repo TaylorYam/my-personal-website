@@ -695,6 +695,12 @@ h3 {
     margin-top: 2rem;
 }
 
+/* Value Props Section - Spacious Layout */
+#value-props {
+    padding: 10rem 0;
+    /* Significantly increased padding */
+}
+
 /* Modal Styles */
 .modal-overlay {
     position: fixed;
