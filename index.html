@@ -444,36 +444,35 @@
             var modal = document.getElementById('qr-modal');
             if (!modal) return;
 
+            var modalContent = modal.querySelector('.modal-content');
             var title = modal.querySelector('h3');
             var desc = modal.querySelector('p'); // The first paragraph
             var img = modal.querySelector('img');
 
+            // Reset state
+            modalContent.classList.remove('fullpage');
+            img.style.maxWidth = '';
+
             if (type === 'official') {
                 title.innerText = '掃描加入官方帳號';
-                title.style.color = '#3e2723';
                 desc.innerHTML = '獲取每週量化投資報告';
-                desc.style.color = '#666';
                 img.src = 'images/qr-official.png';
                 img.alt = 'Line Official Account QR Code';
-                img.style.maxWidth = '250px'; // Reset size
+                img.style.maxWidth = '250px';
             } else if (type === 'strategy-info') {
                 title.innerText = '美股量化動能配置';
-                title.style.color = '#3e2723';
                 desc.innerHTML = '策略歷史回測數據參考';
-                desc.style.color = '#666';
                 img.src = 'images/backtest.png';
                 img.alt = 'Strategy Backtest Chart';
-                // Allow chart to be larger than QR code
-                img.style.maxWidth = '100%';
+                // Add fullpage class for large chart
+                modalContent.classList.add('fullpage');
             } else {
                 // Default to private
                 title.innerText = '掃描加 LINE 好友';
-                title.style.color = '#3e2723';
                 desc.innerHTML = '索取簡報與試算表<br><span style="font-size: 0.9rem;">ID: 05032015</span>';
-                desc.style.color = '#666';
                 img.src = 'images/qr-private.jpg';
                 img.alt = 'Private LINE QR Code';
-                img.style.maxWidth = '250px'; // Reset size
+                img.style.maxWidth = '250px';
             }
 
             modal.classList.add('active');
