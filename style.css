@@ -206,9 +206,69 @@ h3 {
     color: var(--primary-color);
 }
 
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--glass-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    /* Centering the icon */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    color: rgba(255, 255, 255, 0.7);
+    /* Subtle white */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover .service-icon {
+    transform: scale(1.1);
+    /* Gentle zoom on hover */
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
 .card-content p {
     color: #4b5563;
     /* Cool Grey */
+    margin-bottom: 1.5rem;
+}
+
+.card-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 /* Contact */
