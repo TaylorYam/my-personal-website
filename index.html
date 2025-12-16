@@ -359,6 +359,37 @@
         <p>&copy; 2025 Taylor Yam. 玉山證券. All rights reserved.</p>
     </footer>
 
+    <!-- QR Code Modal -->
+    <div id="qr-modal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal(event)">&times;</span>
+            <h3>掃描加入官方帳號</h3>
+            <p>獲取每週量化投資報告</p>
+            <img src="images/line-qr.png" alt="Line Official Account QR Code" class="qr-image">
+            <p class="modal-note">點擊任意處關閉視窗</p>
+        </div>
+    </div>
+
+    <!-- Modal Logic -->
+    <script>
+        function openModal() {
+            var modal = document.getElementById('qr-modal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else {
+                console.error("Modal element not found!");
+            }
+        }
+
+        function closeModal(event) {
+            if (event.target.id === 'qr-modal' || event.target.classList.contains('close-btn')) {
+                document.getElementById('qr-modal').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
+
     <script src="main.js"></script>
 </body>
 
