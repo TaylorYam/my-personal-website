@@ -610,8 +610,11 @@
             // Reset CSS overrides
             var highlights = modal.querySelector('.strategy-highlights');
             var period = modal.querySelector('.data-period');
+            var disclaimer = modal.querySelector('.strategy-disclaimer'); // Added
+
             if (highlights) highlights.style.display = '';
             if (period) period.style.display = '';
+            if (disclaimer) disclaimer.style.display = ''; // Clear inline style
 
             if (type === 'official') {
                 title.innerText = '掃描加入官方帳號';
