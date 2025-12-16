@@ -654,6 +654,7 @@ h3 {
     align-items: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     animation: rotateChart 20s infinite linear;
+    /* Restore Rotation */
 }
 
 .chart-inner {
@@ -669,6 +670,8 @@ h3 {
     font-weight: 800;
     font-size: 1.2rem;
     color: var(--text-color);
+    animation: counterRotateChart 20s infinite linear;
+    /* Counter Rotate */
 }
 
 @keyframes rotateChart {
@@ -678,6 +681,16 @@ h3 {
 
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes counterRotateChart {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
     }
 }
 
