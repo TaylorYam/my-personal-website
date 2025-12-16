@@ -590,20 +590,10 @@ h3 {
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
+    /* Removed glass background to let dark theme shine */
     padding: 2rem;
     position: relative;
     z-index: 2;
-    flex-wrap: wrap;
-    /* Allow wrapping for bottom button */
-}
-
-.strategy-cta {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    order: 10;
-    /* Ensure it stays at the bottom */
 }
 
 .strategy-content {
