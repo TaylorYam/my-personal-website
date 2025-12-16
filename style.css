@@ -79,8 +79,8 @@ h3 {
 .hero-title {
     color: #967d46;
     /* Matching the Premium Gold from v1 palette explicitly */
-    font-size: 3rem;
-    /* Make it big */
+    font-size: 2.5rem;
+    /* Reduced from 3rem to prevent wrapping */
     line-height: 1.5;
     margin-bottom: 1.5rem;
     letter-spacing: 1px;
