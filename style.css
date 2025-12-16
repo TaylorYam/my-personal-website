@@ -1451,3 +1451,27 @@ footer {
     z-index: 10;
     margin: 0;
 }
+
+.strategy-disclaimer {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    color: #666;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    line-height: 1.4;
+}
+
+.modal-content.fullpage .strategy-disclaimer {
+    display: block;
+}
