@@ -562,6 +562,10 @@ h3 {
     /* Less rounded corners (almost square) */
     text-align: center;
     border: 1px solid var(--glass-border);
+    max-width: 700px;
+    /* Limit width to avoid stretching */
+    margin: 0 auto;
+    /* Center the box */
 }
 
 .contact-box h2 {
