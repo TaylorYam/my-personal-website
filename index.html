@@ -462,6 +462,10 @@
                 投資人應獨立判斷，審慎評估並自負投資風險。過往績效不代表未來表現。
             </div>
 
+            <!-- Navigation Buttons -->
+            <button class="nav-btn prev" onclick="changeSlide(-1)">&lt;</button>
+            <button class="nav-btn next" onclick="changeSlide(1)">&gt;</button>
+
             <img src="images/line-qr-private.png" alt="LINE QR Code" class="qr-image"
                 style="max-width: 250px; border-radius: 10px;">
             <p class="modal-note" style="margin-top: 1rem; color: #999;">點擊任意處關閉視窗</p>
@@ -470,6 +474,68 @@
 
     <!-- Modal Logic -->
     <script>
+        let currentSlide = 0;
+        const strategySlides = [
+            {
+                type: 'backtest',
+                img: 'images/backtest.png',
+                showHighlights: true,
+                title: ''
+            },
+            {
+                type: 'blank',
+                img: 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', // Transparent/Blank Image
+                showHighlights: false,
+                title: '第二頁 (空白預覽)'
+            }
+        ];
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide >= strategySlides.length) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = strategySlides.length - 1;
+            updateStrategySlide();
+        }
+
+        function updateStrategySlide() {
+            const modal = document.getElementById('qr-modal');
+            const img = modal.querySelector('img');
+            const highlights = modal.querySelector('.strategy-highlights');
+            const period = modal.querySelector('.data-period');
+            const title = modal.querySelector('h3');
+
+            const slide = strategySlides[currentSlide];
+
+            img.src = slide.img;
+
+            // Handle Highlights
+            if (highlights) {
+                if (slide.showHighlights) highlights.style.display = 'flex';
+                else highlights.style.display = 'none';
+            }
+
+            // Handle Title (Custom)
+            if (slide.title) {
+                title.innerText = slide.title;
+                title.style.display = 'block';
+                title.style.position = 'absolute';
+                title.style.top = '30px';
+                title.style.width = '100%';
+                title.style.textAlign = 'center';
+                title.style.fontSize = '2rem';
+                title.style.zIndex = '10';
+            } else {
+                title.style.display = 'none';
+            }
+
+            // Period badge - Hide on slide 2
+            if (period) {
+                // If it's slide 2 (index 1) or type 'blank', hide period
+                if (slide.type !== 'backtest') period.style.display = 'none';
+                else period.style.display = ''; // Restore default
+            }
+        }
+
         function openModal(type) {
             var modal = document.getElementById('qr-modal');
             if (!modal) return;
@@ -518,6 +584,63 @@
                 document.getElementById('qr-modal').classList.remove('active');
                 document.body.style.overflow = '';
             }
+        }
+        // Updated openModal to support slideshow
+        function openModal(type) {
+            var modal = document.getElementById('qr-modal');
+            if (!modal) return;
+
+            var modalContent = modal.querySelector('.modal-content');
+            var title = modal.querySelector('h3');
+            var desc = modal.querySelector('p');
+            var img = modal.querySelector('img');
+            var navBtns = modal.querySelectorAll('.nav-btn');
+
+            // Reset state
+            modalContent.classList.remove('fullpage');
+            img.style.maxWidth = '';
+            title.style.display = 'block';
+            title.style.position = '';
+            title.style.fontSize = '';
+            desc.style.display = 'block';
+
+            // Hide nav buttons by default
+            navBtns.forEach(btn => btn.style.display = 'none');
+
+            // Reset CSS overrides
+            var highlights = modal.querySelector('.strategy-highlights');
+            var period = modal.querySelector('.data-period');
+            if (highlights) highlights.style.display = '';
+            if (period) period.style.display = '';
+
+            if (type === 'official') {
+                title.innerText = '掃描加入官方帳號';
+                desc.innerHTML = '獲取每週量化投資報告';
+                img.src = 'images/qr-official.png';
+                img.alt = 'Line Official Account QR Code';
+                img.style.maxWidth = '250px';
+            } else if (type === 'strategy-info') {
+                desc.style.display = 'none';
+                modalContent.classList.add('fullpage');
+
+                // Show nav buttons
+                navBtns.forEach(btn => btn.style.display = 'flex');
+
+                // Start at slide 0
+                currentSlide = 0;
+                updateStrategySlide();
+
+            } else {
+                // Default to private
+                title.innerText = '掃描加 LINE 好友';
+                desc.innerHTML = '索取簡報與試算表<br><span style="font-size: 0.9rem;">ID: 05032015</span>';
+                img.src = 'images/qr-private.jpg';
+                img.alt = 'Private LINE QR Code';
+                img.style.maxWidth = '250px';
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
     </script>
 
