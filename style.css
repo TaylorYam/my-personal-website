@@ -63,8 +63,8 @@ h3 {
 }
 
 .hero-title {
-    color: #967d46;
-    /* Matching the Premium Gold from v1 palette explicitly */
+    color: #3e2723;
+    /* Deep Espresso / Dark Coffee for high contrast */
     font-size: 2.5rem;
     /* Reduced from 3rem to prevent wrapping */
     line-height: 1.5;
