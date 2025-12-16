@@ -351,7 +351,8 @@ h3 {
 .value-icon {
     width: 60px;
     height: 60px;
-    margin: 0 auto 1.5rem auto;
+    margin: 0 auto 0.8rem auto;
+    /* Unified spacing 0.8rem */
     color: #d4a373;
     /* Gold/Bronze Accent */
 }
@@ -749,7 +750,8 @@ h3 {
     text-transform: uppercase;
     color: #a89f91;
     /* Muted Taupe for English eyebrow */
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    /* Unified Spacing */
     font-weight: 600;
     line-height: 1.2;
 }
@@ -761,8 +763,8 @@ h3 {
     color: #f4f1ea;
     /* Light Cream */
     margin-top: 0;
-    margin-bottom: 0.3rem;
-    /* Adjusted for Top position */
+    margin-bottom: 0.8rem;
+    /* Unified Spacing */
     font-weight: 800;
     letter-spacing: 0;
 }
