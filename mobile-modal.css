@@ -10,7 +10,7 @@
 }
 
 /* Mobile Optimization for Fullpage Modal - REFINED LAYOUT */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 
     /* 1. Container Setup */
     .modal-content.fullpage {
