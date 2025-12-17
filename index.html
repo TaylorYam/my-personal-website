@@ -183,7 +183,13 @@
                             <span class="keep-phrase">打造您的退休護城河。</span>透過<span class="keep-phrase">紀律投資全球指數，</span><span
                                 class="keep-phrase">複利滾存千萬資產。</span>
                         </p>
-                        <a href="#contact" class="card-link">開始規劃 &rarr;</a>
+                        <div class="card-actions"
+                            style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem;">
+                            <a href="javascript:void(0)" class="card-link" onclick="openModal('dca-info')">查看定期定額回測
+                                &rarr;</a>
+                            <a href="#contact" class="btn primary"
+                                style="padding: 0.5rem 1rem; font-size: 0.9rem; width: fit-content;">開始規劃</a>
+                        </div>
                     </div>
                 </div>
                 <!-- 服務項目 3 -->
@@ -558,6 +564,15 @@
 
                 img.src = 'images/backtest.png';
                 img.alt = 'Strategy Backtest Chart';
+                // Add fullpage class for large chart
+                modalContent.classList.add('fullpage');
+            } else if (type === 'dca-info') {
+                // New DCA Strategy Modal
+                title.style.display = 'none';
+                desc.style.display = 'none';
+
+                img.src = 'images/SPY_DCA_2015.png';
+                img.alt = 'DCA Strategy Chart';
                 // Add fullpage class for large chart
                 modalContent.classList.add('fullpage');
             } else {
