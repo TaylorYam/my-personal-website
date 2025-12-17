@@ -661,9 +661,8 @@
 
                 // 4. Set Custom Disclaimer for DCA
                 if (disclaimer) {
-                    disclaimer.innerHTML = '投資涉及風險，包括市場波動、匯率變化及本金損失之可能。<br>定期定額（平均成本法）並非獲利保證，亦無法完全規避市場下跌風險。過往回測績效不代表未來表現。';
+                    disclaimer.innerText = '本網站內容僅供參考，不構成任何投資建議或要約。';
                     disclaimer.style.display = 'block';
-                    // Ensure overlap/position if needed, but default absolute bottom is fine
                 }
 
                 img.src = 'images/SPY_DCA_2015.png';
