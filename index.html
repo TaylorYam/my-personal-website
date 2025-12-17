@@ -576,6 +576,8 @@
                 desc.innerHTML = '獲取每週量化投資報告';
                 img.src = 'images/qr-official.png';
                 img.alt = 'Line Official Account QR Code';
+                img.style.display = 'block';
+                img.style.margin = '0 auto';
                 img.style.maxWidth = '250px';
             } else if (type === 'strategy-info') {
                 desc.style.display = 'none';
@@ -684,7 +686,10 @@
                 desc.innerHTML = '索取簡報與試算表<br><span style="font-size: 0.9rem;">ID: 05032015</span>';
                 img.src = 'images/qr-private.jpg';
                 img.alt = 'Private LINE QR Code';
-                img.style.maxWidth = '250px';
+                img.style.display = 'block';
+                // Center the QR image
+                img.style.margin = '0 auto';
+                img.style.maxWidth = '80%';
             }
 
             modal.classList.add('active');
