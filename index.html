@@ -579,9 +579,9 @@
             } else if (type === 'strategy-info') {
                 desc.style.display = 'none';
                 modalContent.classList.add('fullpage');
-                modalContent.style.backgroundColor = ''; // Reset bg
+                modalContent.style.backgroundColor = '#f4f1ea'; // Set beige background
 
-                // Restore default period for Strategy Info
+                // Restore default period
                 if (period) {
                     period.innerText = '回測期間：2020/01 - 2025/11';
                     // Restyle period back to absolute (default CSS)
@@ -592,9 +592,9 @@
                     period.style.marginBottom = '';
                 }
 
-                // Restore Disclaimer (Momentum Strategy)
+                // Update Disclaimer to match DCA (Simplified)
                 if (disclaimer) {
-                    disclaimer.innerHTML = '⚠️ 本策略僅為程式交易邏輯分享，不代表對未來獲利之保證。<br>投資人應獨立判斷，審慎評估並自負投資風險。過往績效不代表未來表現。';
+                    disclaimer.innerText = '本網站內容僅供參考，不構成任何投資建議或要約。';
                     disclaimer.style.display = 'block';
                 }
 
@@ -718,7 +718,7 @@
 
             // Handle Title (Custom)
             if (slide.title) {
-                title.innerText = slide.title;
+                title.innerHTML = slide.title; // Use innerHTML to support span
                 title.style.display = 'block';
                 title.style.position = 'absolute';
                 title.style.top = '30px';
