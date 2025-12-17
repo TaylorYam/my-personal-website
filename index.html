@@ -486,7 +486,7 @@
                 type: 'backtest',
                 img: 'images/backtest.png',
                 showHighlights: true,
-                title: ''
+                title: '動能趨勢策略回測績效(本金 100,000 美金) <span style="font-size: 0.7em; font-weight: normal; margin-left: 10px; color: #666;">(回測期間：2020/01 - 2025/11)</span>'
             }
         ];
 
@@ -516,23 +516,25 @@
 
             // Handle Title (Custom)
             if (slide.title) {
-                title.innerText = slide.title;
+                title.innerHTML = slide.title; // Use innerHTML to support span
                 title.style.display = 'block';
                 title.style.position = 'absolute';
                 title.style.top = '30px';
                 title.style.width = '100%';
                 title.style.textAlign = 'center';
-                title.style.fontSize = '2rem';
-                title.style.zIndex = '10';
+                // Adjust fontSize if needed, 2rem might be too big for long title
+                title.style.fontSize = '1.6rem';
+                title.style.zIndex = '20';
+                title.style.marginTop = '0';
             } else {
                 title.style.display = 'none';
             }
 
-            // Period badge - Hide on slide 2
+            // Period badge - Hide if title has merged date or explicitly hidden
             if (period) {
-                // If it's slide 2 (index 1) or type 'blank', hide period
-                if (slide.type !== 'backtest') period.style.display = 'none';
-                else period.style.display = ''; // Restore default
+                if (slide.title && slide.title.includes('回測期間')) period.style.display = 'none';
+                else if (slide.type !== 'backtest') period.style.display = 'none';
+                else period.style.display = 'none'; // Default to hide since we use title now
             }
         }
 
