@@ -577,11 +577,32 @@
             } else if (type === 'strategy-info') {
                 desc.style.display = 'none';
                 modalContent.classList.add('fullpage');
+                modalContent.style.backgroundColor = ''; // Reset bg
 
-                // Restore default period for Strategy Info
+                // Restore default period
                 if (period) {
                     period.innerText = '回測期間：2020/01 - 2025/11';
-                    // period.style.display is handled by updateStrategySlide
+                    // Restyle period back to absolute (default CSS)
+                    period.style.position = '';
+                    period.style.top = '';
+                    period.style.right = '';
+                    period.style.marginTop = '';
+                    period.style.marginBottom = '';
+                }
+
+                // Restore Highlights Data (Momentum Strategy)
+                if (highlights) {
+                    highlights.style.display = 'flex';
+                    const values = highlights.querySelectorAll('.value');
+                    const subs = highlights.querySelectorAll('.sub-value');
+                    if (values.length >= 2) {
+                        values[0].innerText = '367.68%';
+                        values[1].innerText = '29.64%';
+                    }
+                    if (subs.length >= 2) {
+                        subs[0].style.display = ''; // Show vs SPY
+                        subs[1].style.display = ''; // Show vs SPY
+                    }
                 }
 
                 // Show nav buttons
@@ -592,16 +613,44 @@
 
             } else if (type === 'dca-info') {
                 // New DCA Strategy Modal Logic
-                title.style.display = 'none';
+
+                // 1. Set Title
+                title.innerText = '每個月定期定額 300 美金投資 SPY';
+                title.style.display = 'block';
+                title.style.position = 'relative'; // Use relative flow
+                title.style.marginTop = '1rem';    // Space from top
+                title.style.marginBottom = '0.5rem';
+                title.style.color = 'var(--primary-color)';
+
                 desc.style.display = 'none';
 
-                // Hide momentum strategy highlights
-                if (highlights) highlights.style.display = 'none';
+                // 2. Update Highlights Data
+                if (highlights) {
+                    highlights.style.display = 'flex';
+                    // Need to target specific values. Assuming order: [0]=Total, [1]=CAGR
+                    const values = highlights.querySelectorAll('.value');
+                    const subs = highlights.querySelectorAll('.sub-value');
 
-                // Update period text for DCA
+                    if (values.length >= 2) {
+                        values[0].innerText = '107.09%'; // Total Return
+                        values[1].innerText = '6.92%';   // CAGR
+                    }
+                    if (subs.length >= 2) {
+                        subs[0].style.display = 'none'; // Hide vs SPY
+                        subs[1].style.display = 'none'; // Hide vs SPY
+                    }
+                }
+
+                // 3. Update Period & Layout
                 if (period) {
                     period.innerText = '回測期間：2015/01 - 2025/11';
                     period.style.display = 'block';
+                    // Move period below title to avoid overlap
+                    period.style.position = 'relative';
+                    period.style.top = 'auto';
+                    period.style.right = 'auto';
+                    period.style.marginTop = '0';
+                    period.style.marginBottom = '1rem';
                 }
 
                 img.src = 'images/SPY_DCA_2015.png';
@@ -610,6 +659,7 @@
 
                 // Add fullpage class for large chart
                 modalContent.classList.add('fullpage');
+                modalContent.style.backgroundColor = '#f4f1ea'; // Ensure bg color
 
             } else {  // Default to private
                 title.innerText = '掃描加 LINE 好友';
