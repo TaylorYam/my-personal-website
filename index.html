@@ -41,6 +41,7 @@
             <li><a href="#about">關於我</a></li>
             <li><a href="#services">專業服務</a></li>
             <li><a href="#strategy">策略分享</a></li>
+            <li><a href="#weekly-reports">精選周報</a></li>
             <li><a href="#contact">聯絡諮詢</a></li>
         </ul>
 
@@ -398,7 +399,7 @@
     <!-- Weekly Reports Section -->
     <section id="weekly-reports" class="section">
         <div class="container">
-            <h2 class="section-title text-center" style="margin-bottom: 3rem; color: #4a5d85; text-align: center;">
+            <h2 class="section-title text-center" style="margin-bottom: 3rem; color: #3e2723; text-align: center;">
                 精選週報分享</h2>
             <div class="report-grid">
                 <!-- Report Card 1 -->
@@ -833,74 +834,7 @@
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-        // Updated Slide Logic (Non-cyclic & Button Visibility)
-        function changeSlide(direction) {
-            let newSlide = currentSlide + direction;
-            if (newSlide < 0 || newSlide >= strategySlides.length) return;
-            currentSlide = newSlide;
-            updateStrategySlide();
-        }
 
-        function updateStrategySlide() {
-            const modal = document.getElementById('qr-modal');
-            const img = modal.querySelector('img');
-            const highlights = modal.querySelector('.strategy-highlights');
-            const period = modal.querySelector('.data-period');
-            const title = modal.querySelector('h3');
-            const navPrev = modal.querySelector('.nav-btn.prev');
-            const navNext = modal.querySelector('.nav-btn.next');
-
-            const slide = strategySlides[currentSlide];
-
-            img.src = slide.img;
-
-            // Handle Highlights
-            if (highlights) {
-                if (slide.showHighlights) highlights.style.display = 'flex';
-                else highlights.style.display = 'none';
-            }
-
-            // Handle Title (Custom)
-            if (slide.title) {
-                title.innerHTML = slide.title; // Use innerHTML to support span
-                title.style.display = 'block';
-                // User requested OVERLAP (Match DCA)
-                title.style.position = 'absolute';
-                title.style.top = '30px';
-                title.style.width = '100%';
-                title.style.textAlign = 'center';
-                title.style.fontSize = '1.6rem';
-                title.style.zIndex = '20';
-                title.style.marginTop = '0';
-                title.style.marginBottom = '0';
-            } else {
-                title.style.display = 'none';
-            }
-
-            // Period badge - Strictly hide if title is present to avoid duplication
-            if (period) {
-                if (slide.title) period.style.display = 'none';
-                else if (slide.type !== 'backtest') period.style.display = 'none';
-                else period.style.display = '';
-            }
-
-            // Disclaimer - Hide on slide 2
-            const disclaimer = modal.querySelector('.strategy-disclaimer');
-            if (disclaimer) {
-                if (slide.type !== 'backtest') disclaimer.style.display = 'none';
-                else disclaimer.style.display = 'block';
-            }
-
-            // Handle Nav Buttons Visibility
-            if (navPrev) {
-                if (currentSlide === 0) navPrev.style.display = 'none';
-                else navPrev.style.display = 'flex';
-            }
-            if (navNext) {
-                if (currentSlide === strategySlides.length - 1) navNext.style.display = 'none';
-                else navNext.style.display = 'flex';
-            }
-        }
 
         function closeModal(event) {
             if (event.target.id === 'qr-modal' || event.target.classList.contains('close-btn')) {
