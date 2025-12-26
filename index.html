@@ -707,7 +707,11 @@
                 // Hide other elements
                 if (highlights) highlights.style.display = 'none';
                 if (period) period.style.display = 'none';
-                if (disclaimer) disclaimer.style.display = 'none'; // Hide disclaimer
+
+                if (disclaimer) {
+                    disclaimer.innerText = '本網站內容僅供參考，不構成任何投資建議或要約。';
+                    disclaimer.style.display = 'block';
+                }
 
                 // Set image
                 img.src = 'images/BOND.png';
