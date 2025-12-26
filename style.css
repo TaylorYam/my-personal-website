@@ -1787,6 +1787,8 @@ footer {
     max-width: 350px;
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
 .report-card:hover {
@@ -1804,6 +1806,9 @@ footer {
 
 .report-info {
     padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .report-date {
@@ -1831,6 +1836,7 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
+    margin-top: auto;
 }
 
 /* Modal for Report Images */
