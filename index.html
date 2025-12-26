@@ -411,6 +411,15 @@
                         <span class="read-more">閱讀更多 &rarr;</span>
                     </div>
                 </div>
+                <!-- Report Card 2 -->
+                <div class="report-card" onclick="openModal('report-1203')">
+                    <img src="images/weekly_1203/1.png" alt="Taylor's Take 12/03" class="report-thumbnail">
+                    <div class="report-info">
+                        <span class="report-date">2025/12/03</span>
+                        <h3 class="report-title">投資日股要注意什麼?</h3>
+                        <span class="read-more">閱讀更多 &rarr;</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -813,6 +822,36 @@
                 if (disclaimer) disclaimer.style.display = 'none';
 
                 // Show nav buttons for slideshow
+                navBtns.forEach(btn => btn.style.display = 'flex');
+
+                modalContent.classList.add('fullpage');
+                modalContent.style.backgroundColor = '#f4f1ea';
+
+                updateStrategySlide();
+
+                updateStrategySlide();
+
+            } else if (type === 'report-1203') {
+                // Report Slides setup
+                activeSlides = [
+                    { type: 'report', img: 'images/weekly_1203/1.png', title: null }
+                ];
+                currentSlide = 0;
+
+                // Hide title
+                title.style.display = 'none';
+                desc.style.display = 'none';
+
+                // Show main image
+                img.style.display = 'block';
+                img.style.maxWidth = '100%';
+
+                if (reportContainer) reportContainer.style.display = 'none';
+                if (highlights) highlights.style.display = 'none';
+                if (period) period.style.display = 'none';
+                if (disclaimer) disclaimer.style.display = 'none';
+
+                // Show nav buttons (even if 1 slide, to keep layout consistent, logic handles limit)
                 navBtns.forEach(btn => btn.style.display = 'flex');
 
                 modalContent.classList.add('fullpage');
