@@ -609,6 +609,20 @@ h3 {
     font-size: 0.9rem;
 }
 
+/* Distinct Service Button Style */
+.btn.service-btn {
+    background: #6d5b51;
+    /* Muted brown */
+    color: white;
+    box-shadow: 0 4px 10px rgba(109, 91, 81, 0.3);
+}
+
+.btn.service-btn:hover {
+    background: #5a4b43;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(109, 91, 81, 0.4);
+}
+
 /* Contact */
 /* Contact */
 .contact-box {
