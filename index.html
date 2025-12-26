@@ -875,10 +875,36 @@
         }
 
 
+
+
         function closeModal(event) {
             if (event.target.id === 'qr-modal' || event.target.classList.contains('close-btn')) {
                 document.getElementById('qr-modal').classList.remove('active');
                 document.body.style.overflow = '';
+            }
+        }
+
+        // Touch Swipe Event Listeners
+        const modalElement = document.getElementById('qr-modal');
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        modalElement.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        modalElement.addEventListener('touchend', function (e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            // Threshold for swipe
+            if (touchEndX < touchStartX - 50) {
+                changeSlide(1); // Swipe Left -> Next
+            }
+            if (touchEndX > touchStartX + 50) {
+                changeSlide(-1); // Swipe Right -> Prev
             }
         }
     </script>

@@ -153,8 +153,27 @@
     }
 
     /* Hide Nav Buttons on Mobile */
+    /* Show Nav Buttons on Mobile */
     .modal-content.fullpage .nav-btn {
-        display: none !important;
+        display: flex !important;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 50;
+    }
+
+    .modal-content.fullpage .nav-btn.prev {
+        left: 10px;
+    }
+
+    .modal-content.fullpage .nav-btn.next {
+        right: 10px;
     }
 
     /* Hide the small note */
