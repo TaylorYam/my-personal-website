@@ -113,6 +113,12 @@ h3 {
     display: inline-block;
 }
 
+@media (max-width: 480px) {
+    .keep-phrase {
+        display: inline;
+    }
+}
+
 .text-highlight {
     color: #a68b51;
     font-weight: 700;
@@ -125,13 +131,21 @@ h3 {
 .hero-title {
     color: #3e2723;
     /* Deep Espresso / Dark Coffee for high contrast */
-    font-size: 2.5rem;
-    /* Reduced from 3rem to prevent wrapping */
-    line-height: 1.5;
+    font-size: 3.5rem;
+    /* Optimal size for desktop */
+    line-height: 1.4;
     margin-bottom: 1.5rem;
     letter-spacing: 1px;
-    text-wrap: initial;
-    /* Force standard wrapping behavior */
+    word-break: normal;
+    /* Allow CJK wrapping */
+    overflow-wrap: break-word;
+    /* Ensure long words break if needed */
+}
+
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 3rem;
+    }
 }
 
 .highlight {
@@ -215,13 +229,12 @@ h3 {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 5rem;
+    /* Push content down from fixed navbar */
     z-index: 2;
 }
 
-.hero-title {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
+/* .hero-title definition merged above */
 
 .hero-subtitle {
     font-size: 1.5rem;
